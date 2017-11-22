@@ -15,14 +15,28 @@ There is also a SignatureUtils class which simplifies the generation of the secu
 * PHP 5.5+ and [composer]
 * You must be connected to the internet to use this site
 
-#### Installing composer on OS X
+## Getting Started
+
+The following shows you how to get the code in this repository up and running as
+a stand-alone site. It assumes [composer] is available on your system.
+
+Alternatively, you can use the simple Makefile included with this project to
+just start on or the other modes,
+
+    make run-php # Using PHP's native server
+
+or
+
+    make run-vagrant # Using Vagrant
+
+### Installing composer on OS X
 
 You'll need to set up [Homebrew] to use a specific tap
 
     brew tap homebrew/php
     brew install composer
 
-## Getting Started - Native
+### Using PHP's native server
 
 * <strike>[Download the package](https://github.com/Learnosity/learnosity-demos/archive/master.zip)</strike>
 * ``` git clone --recursive https://github.com/Learnosity/learnosity-demos.git``` (make sure you have set up an SSH key in GitHub when you do the clone as the PHP SDK will not clone properly through HTTPS. [Instructions here](https://help.github.com/articles/generating-ssh-keys/))
@@ -33,16 +47,15 @@ You'll need to set up [Homebrew] to use a specific tap
 
 You can use the local server to quickly get up and running, no Apache/IIS is required.
 
-```
-cd learnosity-demos
-composer update
-cd www
-php -S localhost:5000
-```
+    git clone https://github.com/Learnosity/learnosity-demos.git
+    cd learnosity-demos
+    composer install
+    cd www
+    php -S localhost:5000
 
 Visit [localhost:5000](http://localhost:5000) in a browser.
 
-## Getting Started - Using Vagrant
+### Using Vagrant
 
 Vagrant is a wrapper for controlling Virtual Machines in a controlled and isolated manner. Vagrant supports all the major platforms and is simple to use and very handy for other development tasks (if you're not already using it!). Vagrant by default supports VirtualBox as it's VM host, but it does support others like VMWare, Parallels, and even AWS EC2.
 
@@ -56,11 +69,9 @@ Once these are installed using this demo is as easy as :
 
 Make sure you have set up an SSH key in GitHub when you do the clone as the PHP SDK will not clone properly through HTTPS. [Instructions here](https://help.github.com/articles/generating-ssh-keys/)
 
-```
-git clone https://github.com/Learnosity/learnosity-demos.git
-cd learnosity-demos
-vagrant up
-```
+    git clone https://github.com/Learnosity/learnosity-demos.git
+    cd learnosity-demos
+    vagrant up
 
 Then opening your browser to [localhost:8080](http://localhost:8080). You can modify files and have the results served by the VM instantly.
 
