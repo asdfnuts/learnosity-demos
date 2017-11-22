@@ -107,4 +107,4 @@ if (file_exists(dirname(__FILE__) . '/config_override.php')) {
     require dirname(__FILE__) . '/config_override.php';
 }
 
-include_once 'sdk/src/LearnositySdk/autoload.php';
+include_once __DIR__ . '/../vendor/autoload.php';

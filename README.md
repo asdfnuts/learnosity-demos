@@ -10,6 +10,18 @@ Each page shows a basic integration to a specific Learnosity API which you can u
 
 There is also a SignatureUtils class which simplifies the generation of the security signatures for each of the types.
 
+### Requirements
+
+* PHP 5.5+ and [composer]
+* You must be connected to the internet to use this site
+
+#### Installing composer on OS X
+
+You'll need to set up [Homebrew] to use a specific tap
+
+    brew tap homebrew/php
+    brew install composer
+
 ## Getting Started - Native
 
 * <strike>[Download the package](https://github.com/Learnosity/learnosity-demos/archive/master.zip)</strike>
@@ -19,10 +31,12 @@ There is also a SignatureUtils class which simplifies the generation of the secu
 
 ^ Note that you must use *localhost* as the domain (not 127.0.0.1), any port is fine but the internal security in some of the APIs is domain restricted. So until you contact Learnosity to whitelist specific domains, access is restricted to *localhost*.
 
-If you have PHP 5.4+ you can use the local server to quickly get up and running, no Apache/IIS is required.
+You can use the local server to quickly get up and running, no Apache/IIS is required.
 
 ```
-cd learnosity-demos/www
+cd learnosity-demos
+composer update
+cd www
 php -S localhost:5000
 ```
 
@@ -43,7 +57,7 @@ Once these are installed using this demo is as easy as :
 Make sure you have set up an SSH key in GitHub when you do the clone as the PHP SDK will not clone properly through HTTPS. [Instructions here](https://help.github.com/articles/generating-ssh-keys/)
 
 ```
-git clone --recursive https://github.com/Learnosity/learnosity-demos.git
+git clone https://github.com/Learnosity/learnosity-demos.git
 cd learnosity-demos
 vagrant up
 ```
@@ -59,11 +73,10 @@ To control the VM you can do one of the following :
 
 This package comes with demo security (consumer) credentials. If you have your own consumer details (as provided by Learnosity) you may use them by editing ```config.php```
 
-## Requirements
-
-* PHP 5.3+
-* You must be connected to the internet to use this site
-
 ## Documentation
 
 More API documentation is available at the [Learnosity Docs site](http://docs.learnosity.com)
+
+
+[composer]: https://getcomposer.org
+[homebrew]: https://brew.sh/
